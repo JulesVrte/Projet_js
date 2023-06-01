@@ -1,0 +1,115 @@
+body, html {
+    padding: 0;
+    margin: 0;
+}
+
+* { box-sizing: border-box; }
+.modal2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.modal-wrapper2 {
+    overflow: auto;
+    background-color: #fff;
+    width: 600px;
+    max-width: calc(100vw - 20px);
+    max-height: calc(100vh - 20px);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px 70px;
+    align-content: flex-start;
+    border-radius: 10px;
+    justify-content: center;
+}
+.modal-wrapper2 h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 46px;
+}
+.modal-wrapper2 img {
+    width: 100%;
+}
+.modal-wrapper2 figure {
+    margin: 0;
+    padding: 10px;
+    width: 20%;
+}
+
+.js-modal-close{
+    margin-left: 43%;
+    background: none;
+    border: none;
+}
+.js-modal-previous {
+    margin-right: 43%;
+    background: none;
+    border: none;
+}
+
+#addphoto {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border-radius: 5px;
+    background-color:#E8F1F6;
+    justify-content: center;
+}
+
+#addphoto button {
+    background: #CBD6DC;
+    border-radius: 50px;
+    height: 36px;
+    width: 45%;
+    color: #306685;
+    background-color: #CBD6DC;
+    border: none;
+    margin-bottom: 2%;
+    
+}
+#addphoto i {
+    margin: 5% 25% 5%;
+}
+
+#addphoto p {
+    margin: 0 25% 5%;
+    font-size: 10px
+}
+
+#formAddWork {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #B3B3B3;;
+}
+
+#formAddWork label {
+    margin: 5% 0% 2%;
+    font-size: 14px;
+    line-height: 16px;
+}
+#formAddWork input {
+    height: 50px ;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+    border: none;
+}
+#cat {
+    margin-bottom: 45px;
+} 
+#valid {
+    margin: 30px 0;
+    width: 50%;
+    height: 36px ;
+    background: #A7A7A7;
+    border-radius: 60px;
+    border: none;
+    color: #FFF
+}
