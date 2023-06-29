@@ -23,7 +23,7 @@ loginForm.addEventListener('submit', async (event) => {
         if (res.token) {
           // Rediriger l'utilisateur vers la page de son compte   
           sessionStorage.setItem('token', res.token)
-          window.location.href = 'http://127.0.0.1:5501/FrontEnd';
+          window.location.href = 'http://127.0.0.1:5501';
         } else {
           // Afficher un message d'erreur
           const errorMessage = document.querySelector('#error-message');

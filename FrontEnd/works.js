@@ -1,6 +1,9 @@
-fetch('http://localhost:5678/api/works')
+function init() {
+    fetch('http://localhost:5678/api/works')
     .then(data => data.json())
     .then(resp => {
+        document.querySelector(".gallery").innerHTML = "";
+        document.querySelector("#liste").innerHTML = "";
         works = genererPieces(resp);
         AdminView()
 
@@ -14,6 +17,8 @@ fetch('http://localhost:5678/api/works')
                 }
             })
     })
+}
+
 function genererPieces(resp) {
     if (resp != "") {
         for (let i = 0; i < resp.length; i++) {
@@ -41,7 +46,7 @@ function genererPieces(resp) {
             btnValid.addEventListener('click', formValidation)
             addPictures.addEventListener('change', function () {
                 picture = document.querySelector('#newPhoto')
-                picture.src = "./assets/images/"+ addPictures.files[0].name
+                picture.src = "./assets/images/" + addPictures.files[0].name
                 pictureObj = addPictures.files[0]
                 picture.style.display = null
                 icone = document.getElementById('iconePhoto')
@@ -52,7 +57,7 @@ function genererPieces(resp) {
                 text.style.display = "none"
             })
             const cat = document.getElementById('cat')
-            cat.addEventListener('change', function() {
+            cat.addEventListener('change', function () {
                 if (title.value && cat.value && picture) {
                     btnValid.style.background = "#1D6154"
                 }
@@ -168,6 +173,7 @@ function deleteWork(e) {
             Authorization: 'Bearer ' + token
         }
     })
+    init()
 }
 
 function AdminView() {
@@ -198,14 +204,14 @@ function AdminView() {
     }
 }
 
-function formValidation (e) {
+function formValidation(e) {
     e.preventDefault()
     token = sessionStorage.getItem('token')
     if (title.value && cat.value && picture) {
         data = new FormData()
-        data.append("image", pictureObj) 
-        data.append("title", title.value) 
-        data.append("category", Number(cat.value)) 
+        data.append("image", pictureObj)
+        data.append("title", title.value)
+        data.append("category", Number(cat.value))
         btnValid = document.getElementById('valid')
         btnValid.style.background = "#1D6154"
         console.log(title.value, pictureObj, cat.value)
@@ -220,4 +226,4 @@ function formValidation (e) {
     }
 }
 
-// clique a l'exterieur closeModal2
+init()
